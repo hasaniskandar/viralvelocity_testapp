@@ -32,6 +32,9 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", root_url %></li>
+              <% if can? :read, Contact %>
+                <li><%= link_to "Contacts", contacts_path %></li>
+              <% end %>
               <li class="divider-vertical"></li>
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
