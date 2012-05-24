@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$('#form-sign-in, #form-sign-up').live('ajax:before', function(){
+  $(':submit.btn-primary', this).attr('disabled', true);
+}).live('ajax:complete', function(){
+  $(':submit.btn-primary', this).attr('disabled', false);
+});

@@ -1,0 +1,16 @@
+<%= simple_form_for resource, :url => session_path(resource), :remote => true, :html => {:id => "form-sign-in", :class => "form-vertical", :style => "margin-bottom: 0;"} do |f| %>
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Sign in</h3>
+  </div>
+  <div class="modal-body">
+    <%= flash_messages if request.xhr? %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :remember_me, :as => :boolean, :label => false, :inline_label => true if devise_mapping.rememberable? %>
+  </div>
+  <div class="modal-footer">
+    <a class="btn" data-dismiss="modal">Cancel</a>
+    <%= f.submit "Sign in", :class => "btn btn-primary" %>
+  </div>
+<% end %>

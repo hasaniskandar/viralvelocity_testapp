@@ -1,0 +1,15 @@
+<%= simple_form_for resource, :url => registration_path(resource), :remote => true,  :html => {:id => "form-sign-up", :class => "form-vertical", :style => "margin-bottom: 0;"} do |f| %>
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Sign up</h3>
+  </div>
+  <div class="modal-body">
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  </div>
+  <div class="modal-footer">
+    <a class="btn" data-dismiss="modal">Cancel</a>
+    <%= f.submit "Sign up", :class => "btn btn-primary" %>
+  </div>
+<% end %>
