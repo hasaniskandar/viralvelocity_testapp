@@ -26,6 +26,11 @@ gem 'cancan'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
